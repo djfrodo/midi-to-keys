@@ -54,7 +54,7 @@ To see what midi keys are being pressed from the SMC-Pad Pocket:
 aseqdump -p "SINCO"
 
 After hitting all 16 pads (in order left to right) the output (currently) will be:
-
+```
 Waiting for data. Press Ctrl+C to end.
 Source  Event                  Ch  Data
  16:0   Note on                 9, note 48, velocity 127
@@ -89,7 +89,7 @@ Source  Event                  Ch  Data
  16:0   Note off                9, note 38, velocity 64
  16:0   Note on                 9, note 39, velocity 127
  16:0   Note off                9, note 39, velocity 64
- 
+ ```
 To change what each key does edit the midi-to-keys or midi-to-keys-wayland files (see source).
 
 Out of the box the SMC-PAD and the Jamjum have the same default midi notes, but the name in the script "SINCO" is for the SMC-PAD, and "JP-Mini" for the Jamjum. Obviously this needs to be changed depending on which you're using.
