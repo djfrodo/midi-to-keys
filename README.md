@@ -97,13 +97,14 @@ Out of the box the SMC-PAD and the Jamjum have the same default midi notes, but 
 To automatically launch a background process on boot use the following in Startup Applications in Ubuntu:
 
 Name: Midi to Keys Startup Script
+
 Comments: <your text here>
 
-Command: /home/<username>/midi-to-keys/midi-to-keys
+Command: /home/< username >/midi-to-keys/midi-to-keys
 
 or 
 
-Command: /home/<username>/midi-to-keys/midi-to-keys-wayland
+Command: /home/< username >/midi-to-keys/midi-to-keys-wayland
 
 It is suggested that you put this repository in your home directory. 
 
