@@ -4,7 +4,7 @@ This project was started to create a simple macro pad for my mother who has macu
 
 https://www.headcycle.com/h/visuallyimpaired/comments/5e6029572cd4/a-small-tactile-web-assistant-for-the-visually
 
-I wanted a small footprint with soft pads that was easy to program could be color coded, and control any application (web browser, screen reader, etc).
+I wanted a small footprint with soft pads that was easy to program, could be color coded, and control any application (web browser, screen reader, etc).
 
 I tried this in Windows using CoyoteMidi (see link above) and it turned out really well.
 
