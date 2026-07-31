@@ -1,0 +1,150 @@
+#!/bin/bash
+
+# Define your MIDI device name (from aseqdump -l)
+MIDI_DEVICE="SINCO"
+
+# Run dotool daemon to speed up inputs and avoid delays
+#dtoold & and using dotoolc is MUCH faster than the original script
+
+#using dotoolc (see below) will not work with the original
+#dotool -D &#original script
+
+#use this instead
+dotoold &
+DAEMON_PID=$!
+
+# Ensure the dotool daemon terminates when the script exits
+trap "kill $DAEMON_PID" EXIT
+
+# Start listening to the MIDI device
+aseqdump -p "$MIDI_DEVICE" | while IFS=" ," read -r src ev1 ev2 ch label1 data1 label2 data2 rest; do
+    
+    # Filter for "Note on" events (ignore velocity 0 Note Off events)
+    if [[ "$ev1 $ev2" == "Note on" ]] && [[ "$data2" != "0" ]]; then
+        echo "MIDI Note: $data1 received."
+        
+		#sleep_time=0.0
+
+        case "$data1" in
+            
+            # MIDI Note 48 opens reddit.com/r/politics in a new tab
+            "48" )
+
+				echo "key ctrl+t" | dotoolc
+                echo "type https://www.reddit.com/r/politics" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 49 opens pbs news hour in a new tab
+            "49" )
+
+				echo "key ctrl+t" | dotoolc            
+                echo "type https://www.youtube.com" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 50 opens new york times in a new tab
+            "50" )
+
+				echo "key ctrl+t" | dotoolc
+				#sleep sleep_time
+                echo "type https://www.nytimes.com" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 51 opens headcycle in a new tab
+			# Using https://www.headcycle.com goes to https://www.headcycle.com/wordcloud2
+			# No idea why
+            "51" )
+
+				echo "key ctrl+t" | dotoolc
+				#sleep sleep_time
+                echo "type https://headcycle.com" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 44 opens gmail in a new tab
+            "44" )
+
+				echo "key ctrl+t" | dotoolc
+				#sleep sleep_time
+                echo "type https://www.gmail.com" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 45 opens gmail compose in a new tab
+            "45" )
+
+				echo "key ctrl+t" | dotoolc
+				#sleep sleep_time
+                echo "type https://mail.google.com/mail/u/0/#inbox?compose=new" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 46 opens gmail drafts in a new tab
+            "46" )
+
+				echo "key ctrl+t" | dotoolc
+				#sleep sleep_time
+                echo "type https://mail.google.com/mail/u/0/#drafts" | dotoolc	
+                echo "key Enter" | dotoolc
+                ;;
+
+            # MIDI Note 47 opens gmail sent in a new tab
+            "47" )
+
+				echo "key ctrl+t" | dotoolc
+				#sleep sleep_time
+                echo "type https://mail.google.com/mail/u/0/#sent" | dotoolc
+                echo "key Enter" | dotoolc
+                ;;
+
+			# MIDI Note 40 open new tab
+            "40" )
+                echo "key ctrl+t" | dotoolc
+                ;;
+
+            # MIDI Note 41 switches to the previous tab
+            "41" )
+                echo "key ctrl+Shift+Tab" | dotoolc
+                ;;
+
+
+            # MIDI Note 42 switches to the next tab
+            "42" )
+                echo "key ctrl+Tab" | dotoolc
+                ;;
+
+			# MIDI Note 43 closes tab
+            "43" )
+                echo "key ctrl+w" | dotoolc
+                ;;
+
+			# MIDI Note 36 #toggle Orca (does this work?)
+            "36" )
+                echo "key Alt+Left" | dotoolc #chrome back
+                ;;
+
+
+			# MIDI Note 37 launches Chrome
+            "37" )
+                echo "key Ctrl+r" | dotoolc #chrome reload
+				#sleep sleep_time
+                ;;
+
+			# MIDI Note 37 launches Chrome
+            "38" )
+                echo "key Ctrl+Shift+t" | dotoolc #chrome open closed tab
+				#sleep sleep_time
+                ;;
+
+
+			# MIDI Note 39 launches chrome
+            "39" )
+                google-chrome &
+				#sleep sleep_time
+                ;;			
+
+        esac
+    fi
+done

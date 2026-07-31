@@ -1,0 +1,38 @@
+# Source - https://superuser.com/a/1170232
+# Posted by CL., modified by community. See post 'Timeline' for change history
+# Retrieved 2026-05-14, License - CC BY-SA 3.0
+
+#!/bin/bash
+aseqdump -p "SINCO" | \
+while IFS=" ," read src ev1 ev2 ch label1 data1 label2 data2 rest; do
+ echo "MIDI Note: $data1 received."
+	case "$ev1 $ev2 $data1" in
+
+	 	#"Note on 64" ) xdotool type hello ;;
+
+		"Note on 48" ) xdotool exec google-chrome https://www.reddit.com/r/politics ;;
+		"Note on 49" ) xdotool exec google-chrome https://www.youtube.com ;;
+		"Note on 50" ) xdotool exec google-chrome https://www.nytimes.com ;;
+		"Note on 51" ) xdotool exec google-chrome https://www.headcycle.com ;;
+
+		"Note on 44" ) xdotool exec google-chrome https://mail.google.com ;;#gmail
+		"Note on 45" ) xdotool exec google-chrome https://mail.google.com/mail/u/0/#inbox?compose=new ;;#compose
+		"Note on 46" ) xdotool exec google-chrome https://mail.google.com/mail/u/0/#sent ;;
+		"Note on 47" ) xdotool exec google-chrome https://mail.google.com/mail/u/0/#drafts ;;
+
+		"Note on 40" ) xdotool key Ctrl+t ;;#new chrome tab
+		"Note on 41" ) xdotool key Ctrl+Shift+Tab ;;#previous tab
+		"Note on 42" ) xdotool key Ctrl+Tab ;;#next tab
+		"Note on 43" ) xdotool key Ctrl+w ;;#close tab
+		
+		#"Note on 36" ) xdotool key Caps_Lock+s ;;#toggle speaking (does this work?)
+		#"Note on 37" ) xdotool exec google-chrome ;;#launch chrome        
+		#"Note on 39" ) xdotool key super+alt+s ;;#toggle Orca on/off
+		
+		"Note on 36" ) xdotool key Alt+Left ;;#back (chrome)
+		"Note on 37" ) xdotool key Ctrl+r ;;#reload page (chrome)
+		"Note on 38" ) xdotool key Ctrl+Shift+t ;;#reopen closed tab (chrome)
+		"Note on 39" ) xdotool exec google-chrome ;;#launch chrome 
+	esac
+
+done
