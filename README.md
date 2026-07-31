@@ -40,7 +40,7 @@ aseqdump -l
 
 
 Output will look something like this:
-
+```
 Port    Client name                      Port name
   0:0    System                           Timer
   0:1    System                           Announce
@@ -48,7 +48,7 @@ Port    Client name                      Port name
  16:0    SINCO                            SINCO SMC-PAD Pocket-Private
  16:1    SINCO                            SINCO SMC-PAD Pocket-Master
  16:2    SINCO                            SINCO 
-
+```
 To see what midi keys are being pressed from the SMC-Pad Pocket:
 
 aseqdump -p "SINCO"
