@@ -96,7 +96,7 @@ To automatically launch a background process on boot use the following in Startu
 
 Name: Midi to Keys Startup Script
 
-Comments: <your text here>
+Comments: < your text here >
 
 Command: /home/< username >/midi-to-keys/midi-to-keys
 
