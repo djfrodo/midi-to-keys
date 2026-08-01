@@ -12,8 +12,6 @@ I later tried VIA and VIAL macropads and on Windows it was a disaster.
 
 After which I wondered if this could be done in linux and...I never thought I would want a macro pad, but I now use it all the time.
 
-So, let's get into it.
-
 The midi-to-keys scripts connect 16 pad midi controllers to commands that control applications in linux.
 
 There are two scripts - one for X11, and one for Wayland (MacOs version coming soon).
