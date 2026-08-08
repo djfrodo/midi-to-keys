@@ -121,6 +121,6 @@ This command can also be used as the startup script command. In fact it's probab
 
 The Jamjum has 3 pad banks which are accessible via the "Pad Bank" key, while the SMC-PAD Pocket needs to be rebooted to change its pad bank. With that said the SMC-PAD Pocket has a much cleaner look due to the omission of the branding and top row of buttons.
 
-In terms of software to change the colors of the pads the Jamjum is much better, but both are kind of janky and you'll need Windows. I didn't change the default notes of the midi keys on either, but the SMC-PAD definitely needs an increase in sensitivity.
+In terms of software to change the colors of the pads the Jamjum is much better, but both are kind of janky and you'll need Windows (SMC-PAD) or Windows, MacOS, Android, or iOs (Jamjum). I didn't change the default notes of the midi keys on either, but the SMC-PAD definitely needs an increase in sensitivity.
 
 Good luck!
