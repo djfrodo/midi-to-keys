@@ -21,9 +21,9 @@ Currently these scripts have been tested on two controllers - the M-Vave SMC-PAD
 ## X11
 
 For older hardware that still uses X11 xdotool needs to be installed: https://github.com/jordansissel/xdotool, https://superuser.com/questions/1170136/translating-midi-input-into-computer-keystrokes-on-linux
-
+```
 apt-get install xdotool
-
+```
 PLEASE NOTE: xdotool ONLY works in X11, not Wayland!!!
 
 ## Wayland
