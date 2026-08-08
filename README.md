@@ -48,9 +48,9 @@ Port    Client name                      Port name
  16:2    SINCO                            SINCO 
 ```
 To see what midi keys are being pressed from the SMC-Pad Pocket:
-
+```
 aseqdump -p "SINCO"
-
+```
 After hitting all 16 pads (in order left to right) the output (currently) will be:
 ```
 Waiting for data. Press Ctrl+C to end.
@@ -98,29 +98,27 @@ Name: Midi to Keys Startup Script
 
 Comments: < your text here >
 
-Command: /home/< username >/midi-to-keys/midi-to-keys
-
+Command
+```
+/home/< username >/midi-to-keys/midi-to-keys
+```
 or 
-
-Command: /home/< username >/midi-to-keys/midi-to-keys-wayland
-
+```
+/home/< username >/midi-to-keys/midi-to-keys-wayland
+```
 It is suggested that you put this repository in your home directory. 
 
 You'll also have to do the following to make the script you use executable:
-
+```
 chmod +x <script name>
-
+```
 These scripts obviously don't have the .sh extention, but if you really want them, add the changes accordingly.
 
 If you've turned either of the pads off and then back on the script won't work. The terminal command to relaunch the script(s) in a background process is:
-
-Command: nohup /home/< username >/midi-to-keys/< midi-to-keys script name > /dev/null 2>&1 &
-
+```
+nohup /home/< username >/midi-to-keys/< midi-to-keys script name > /dev/null 2>&1 &
+```
 This command can also be used as the startup script command. In fact it's probably preferable to the simple startup command above, but either will work.
-
-
-
-
 
 The Jamjum has 3 pad banks which are accessible via the "Pad Bank" key, while the SMC-PAD Pocket needs to be rebooted to change its pad bank. With that said the SMC-PAD Pocket has a much cleaner look due to the omission of the branding and top row of buttons.
 
