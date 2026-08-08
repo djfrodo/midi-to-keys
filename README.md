@@ -33,10 +33,9 @@ For Wayland alternatives for xdotool see: https://www.reddit.com/r/linuxquestion
 ## In Use
 
 To list the midi controllers connected in X11:
-
+```
 aseqdump -l
-
-
+```
 Output will look something like this:
 ```
 Port    Client name                      Port name
