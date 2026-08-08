@@ -114,7 +114,7 @@ These scripts obviously don't have the .sh extention, but if you really want the
 
 If you've turned either of the pads off and then back on the script won't work. The terminal command to relaunch the script(s) in a background process is:
 
-Command: nohup /home/< username >/midi-to-keys/midi-to-keys-jamjum.sh > /dev/null 2>&1 &
+Command: nohup /home/< username >/midi-to-keys/< midi-to-keys script name > /dev/null 2>&1 &
 
 This command can also be used as the startup script command. In fact it's probably preferable to the simple startup command above, but either will work.
 
