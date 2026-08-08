@@ -111,7 +111,7 @@ You'll also have to do the following to make the script you use executable:
 ```
 chmod +x <script name>
 ```
-These scripts obviously don't have the .sh extention, but if you really want them, add the changes accordingly.
+These SMC-PAD scripts don't have the .sh extention, the Jamjum does...and it doesn't matter, if you really want the extention, add the changes accordingly.
 
 If you've turned either of the pads off and then back on the script won't work. The terminal command to relaunch the script(s) in a background process is:
 ```
