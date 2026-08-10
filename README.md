@@ -14,9 +14,15 @@ After which I wondered if this could be done in linux and...I never thought I wo
 
 The midi-to-keys scripts connect 16 pad midi controllers to commands that control applications in linux.
 
-There are three scripts - two for X11, and one for Wayland ~~(MacOs version coming soon)~~. The only difference between the x11 scripts are the name of the controller in the code - one is for the SMC-PAD, and one is for the Jamjum.
+There are three scripts - two for X11, and one for Wayland ~~(MacOs version coming soon)~~.
 
-Currently these scripts have been tested on two controllers - the M-Vave SMC-PAD Pocket, and the JamJum Pocket (or under another name the JP-MINI). Both also have different names depending on re/seller, but basically these are the basic 16 pad midi controllers.
+Edit: In true Apple fashion writing a python script that can load when booting requires a few dependencies. Those dependencies require homebrew for installation, and my version of MacOS (Catalina) is too old. Basically the only way to upgrade MacOS to try this out is the OpenCore Legacy Patcher, and...that's not going to happen.   
+
+The only difference between the x11 scripts are the name of the controller in the code - one is for the SMC-PAD, and one is for the Jamjum.
+
+The Wayland script is totally different code, and again, you'll need to update the controller name (see below).
+
+Currently these scripts have been tested on two controllers - the M-Vave SMC-PAD Pocket, and the JamJum  JP-MINI (or under another name the Jamjum Pocket). Both also have different names depending on re/seller, but basically these are the basic 16 pad midi controllers. On Amazon the company that sells these is Lefiko.
 
 ## X11
 
@@ -32,7 +38,7 @@ For Wayland alternatives for xdotool see: https://www.reddit.com/r/linuxquestion
 
 Basically you need to install ydotool and the ydotoold daemon.
 
-Note: The first time I did this is worked flawlessly, on a second machine I cannot, for the life of me, get it to work, so your results may vary.
+Note: The first time I did this is worked flawlessly, on a second machine for the life of me I cannot get it to work, so your results may vary.
 
 ## In Use
 
@@ -115,7 +121,7 @@ You'll also have to do the following to make the script you use executable:
 ```
 chmod +x <script name>
 ```
-These SMC-PAD scripts don't have the .sh extention, the Jamjum does...and it doesn't matter, if you really want the extention, add the changes accordingly.
+These SMC-PAD scripts don't have the .sh extention, the Jamjum does...and it doesn't matter, if you really want the extension, add the changes accordingly.
 
 If you've turned either of the pads off and then back on the script won't work. The terminal command to relaunch the script(s) in a background process is:
 ```
