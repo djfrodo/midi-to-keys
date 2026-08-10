@@ -14,7 +14,7 @@ After which I wondered if this could be done in linux and...I never thought I wo
 
 The midi-to-keys scripts connect 16 pad midi controllers to commands that control applications in linux.
 
-There are three scripts - two for X11, and one for Wayland (MacOs version coming soon). The only difference between the x11 scripts are the name of the controller in the code - one is for the SMC-PAD, and one is for the Jamjum.
+There are three scripts - two for X11, and one for Wayland ~~(MacOs version coming soon)~~. The only difference between the x11 scripts are the name of the controller in the code - one is for the SMC-PAD, and one is for the Jamjum.
 
 Currently these scripts have been tested on two controllers - the M-Vave SMC-PAD Pocket, and the JamJum Pocket (or under another name the JP-MINI). Both also have different names depending on re/seller, but basically these are the basic 16 pad midi controllers.
 
@@ -29,6 +29,10 @@ PLEASE NOTE: xdotool ONLY works in X11, not Wayland!!!
 ## Wayland
 
 For Wayland alternatives for xdotool see: https://www.reddit.com/r/linuxquestions/comments/u5mxzi/xdotool_alternative_for_wayland/ or use your google fu.
+
+Basically you need to install ydotool and the ydotoold daemon.
+
+Note: The first time I did this is worked flawlessly, on a second machine I cannot, for the life of me, get it to work, so your results may vary.
 
 ## In Use
 
